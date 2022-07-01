@@ -1,0 +1,9 @@
+print("Velkommen til drikkepenge beregneren!")
+
+regning  = float(input("Hvad er det samlede regningsbeløb?\ndkk:"))
+tip = int(input("Hvor meget tip vil du give?\nProcent:"))
+split = int(input("Hvor mange personer skal opdele regningen?\nPersoner:"))
+
+total = ("{:.2f}".format((((regning * (tip / 100)) + regning) / split)))
+
+print(f"Hver person skal betale:  {total} dkk")
