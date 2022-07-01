@@ -1,0 +1,41 @@
+import random
+
+
+bogstaver = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+tal = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+symboler = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
+
+print("Password generatoren!")
+nr_bogstaver= (input("Hvor mange bogstaver ønsker du koden skal have?\n"))
+nr_symboler = (input(f"Hvor mange symboler ønsker du?\n"))
+nr_tal = (input(f"Hvor mange tal ønsker du?\n"))
+
+if not nr_bogstaver.isdigit() or not nr_symboler.isdigit() or not nr_tal.isdigit():
+  print("Invalid value, skriv et tal istedet.")
+else:
+  password = []
+
+  random_bogstaver = random.randint(0, 51)
+  for i in range(0, int(nr_bogstaver)):
+    random_bogstaver = random.randint(0, 51)
+    password.append(bogstaver[random_bogstaver])
+
+  random_tal = random.randint(0,9)
+  for i in range(0, int(nr_tal)):
+    random_tal = random.randint(0,9)
+    password.append(tal[random_tal])
+
+  random_symbol = random.randint(0,8)
+  for i in range(0, int(nr_symboler)):
+    random_symbol = random.randint(0,8)
+    password.append(symboler[random_symbol])
+
+  random.shuffle(password)
+  print(f"Her er dit nye password: {''.join(password)}")
+
+  if len(password) <= 6:
+    print("Din adgangskode er svag, prøv at inkludere mindst 8 tegn for en stærkere adgangskode.")
+  elif len(password) == 7:
+    print("Din adgangskode er medium, prøv at inkludere mindst 8 tegn for en stærkere adgangskode.")
+  else:
+    print("Dit kodeord er stærkt.")
