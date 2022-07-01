@@ -1,0 +1,74 @@
+import random
+
+
+sten = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+papir = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+saks = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+
+choice = (input("Hvad vælger du? skriv 0 for sten, 1 for Papir or 2 for Saks\n0/1/2:"))
+computers_choice = random.randint(0,2)
+
+if not choice.isdigit():
+  print("skriv et gyldigt nummer mellem 0-2, prøv igen og vælg et nummer mellem 0-2.")
+else:
+  choice = int(choice)
+  if choice > 2:
+    print("You've entered an invalid number, try again and choose a number between 0-2.")
+  elif choice == 0 or choice == 1 or choice == 2:
+    if choice == 0:
+      print(f"Du valgte: sten {sten}")
+    elif choice == 1:
+      print(f"Du valgte: Papir {papir}")
+    elif choice == 2:
+      print(f"Du valgte: saks {saks}")
+
+    if computers_choice == 0:
+      print(f"Computeren valgte: sten {sten}")
+      if choice == 2:
+        print("Du tabte, sten vinder over saks.")
+      elif choice == 0:
+        print("Uafgjort!")
+      else:
+        print("Du vandt!")
+
+    elif computers_choice == 1:
+      print(f"Computeren valgte: Papir {papir}")
+      if choice == 0:
+        print("Du tabte, papir vinder over sten.")
+      elif choice == 0:
+        print("Uafgjort!")
+      else:
+        print("Du vandt!")
+
+    elif computers_choice == 2:
+      print(f"Computeren valgte: saks {saks}")
+      if choice == 1:
+        print("Du tabte, saks vinder over papir.")
+      elif choice == 2:
+        print("Uafgjort")
+      else:
+        print("Du vandt!")
