@@ -1,0 +1,4 @@
+print("Velkommen til Band Navne Generatoren!")
+by = input("Hvilken by voksede du op i?\n")
+kæledyr = input("Hvad er navnet på dit første kæledyr?\n")
+print("Dit bandnavn er " + by + " " + kæledyr)
